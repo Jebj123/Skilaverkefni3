@@ -1,0 +1,108 @@
+.container {
+  width: 640px;
+  margin: auto;
+  margin-top: 150px;
+  border-bottom: rgb(54, 122, 168) inset;
+  border-left: rgb(8, 255, 8) inset;
+  border-top: rgba(7, 241, 97, 0.719) inset;
+  border-right: rgb(162, 190, 2) inset;
+  background-image: linear-gradient(
+    180deg,
+    rgb(226, 226, 226),
+    rgb(255, 255, 255)
+  );
+
+  color: #262626;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px 50px;
+  border-radius: 10px;
+}
+
+.container h1 {
+  text-align: center;
+}
+
+.container hr {
+  height: 2px;
+  border: none;
+  background: #707070;
+}
+img {
+  height: 300px;
+  width: 300px;
+  display: block;
+  margin: auto;
+}
+
+.container h2 {
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.container ul li {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  padding-left: 15px;
+  border: 1px solid #0a0a0a;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.container ul li:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 5px;
+}
+
+.container2 button {
+  margin: auto;
+  width: 250px;
+  height: 65px;
+  background-color: #3f889a;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.container button:hover {
+  transform: scale(1.03);
+}
+
+.container button {
+  margin: auto;
+  width: 250px;
+  height: 65px;
+  background-color: #24af75;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.container .index {
+  margin: auto;
+  font-size: 18px;
+}
+.container .rettSvar {
+  background: rgb(9, 105, 0);
+  background-color: rgba(45, 180, 45, 0.336);
+}
+
+.container .rangtSvar {
+  background: rgb(230, 31, 31);
+  background-color: rgba(226, 52, 52, 0.514);
+}
+img {
+  border-radius: 10px;
+  border-bottom: rgb(54, 122, 168) inset;
+  border-left: rgb(8, 255, 8) inset;
+  border-top: rgba(7, 241, 97, 0.719) inset;
+  border-right: rgb(162, 190, 2) inset;
+}

@@ -1,0 +1,42 @@
+export const data = [
+  {
+    spurning: "Hvað er eftirnafn Svamps?",
+    svar1: "Sigurðsson",
+    svar2: "Bergsson",
+    svar3: "Vatnsson",
+    svar4: "Sveinsson",
+    svar: 4,
+  },
+  {
+    spurning: "Hver er Fæðingardagur Jóns Sigurðssonar?",
+    svar1: "14 Apríl",
+    svar2: "12 Febrúar",
+    svar3: "17 Júli",
+    svar4: "17 Júní",
+    svar: 4,
+  },
+  {
+    spurning: "Hvað er hávaxið í byrjun en minnkar þegar ég eldist?",
+    svar1: "Buxur",
+    svar2: "Kerti",
+    svar3: "Kleina",
+    svar4: "Sykur",
+    svar: 2,
+  },
+  {
+    spurning: "Hvaða orð er stafsett rangt í öllum orðabókum?",
+    svar1: "Farga",
+    svar2: "Vinstri",
+    svar3: "Rangt",
+    svar4: "Hægri",
+    svar: 3,
+  },
+  {
+    spurning: "Hvað er með 88 hamra en hittir aldrei nagla?",
+    svar1: "Ristavél",
+    svar2: "Timbur",
+    svar3: "Berg",
+    svar4: "Píanó",
+    svar: 4,
+  },
+];
