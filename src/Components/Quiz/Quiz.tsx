@@ -1,21 +1,21 @@
-import React, { useRef, useState } from "react";
+import React, { createElement, useRef, useState } from "react";
 import "./Quiz.css";
-import { data } from "./Svor";
+import { spurningar } from "./Svor";
 import confetti from "https://cdn.skypack.dev/canvas-confetti";
 
 const quiz = () => {
   let [index, setIndex] = useState(0);
-  let [spurning, setSpurning] = useState(data[index]);
-  let [las, setLas] = useState(false);
+  let [spurning, setSpurning] = useState(spurningar[index]);
   let [stig, setStig] = useState(0);
   let [nidurstada, setNidurstada] = useState(false);
+  let [las, setLas] = useState(false);
 
-  let svar1 = useRef(null);
-  let svar2 = useRef(null);
-  let svar3 = useRef(null);
-  let svar4 = useRef(null);
+  let val1 = useRef(null);
+  let val2 = useRef(null);
+  let val3 = useRef(null);
+  let val4 = useRef(null);
 
-  let svarArray = [svar1, svar2, svar3, svar4];
+  let valArray = [val1, val2, val3, val4];
 
   let rettAudio = new Audio("./Audio/Ding.wav");
   let rangtAudio = new Audio("./Audio/Rangt.wav");
@@ -32,17 +32,16 @@ const quiz = () => {
         e.target.classList.add("rangtSvar");
         rangtAudio.play();
         setLas(true);
-        svarArray[spurning.svar - 1].current.classList.add("rettSvar");
+        valArray[spurning.svar - 1].current.classList.add("rettSvar");
       }
     }
   };
 
   const lokaMynd = () => {
-    if (stig < 3) {
+    if (stig < 5) {
       document.body.appendChild(document.createElement("img")).src =
-        "/public/images/badDog.jpg";
-      document.body.appendChild(document.createElement("h1"));
-    } else if (stig >= 3) {
+        "/public/images/badDog.gif";
+    } else if (stig >= 5) {
       document.body.appendChild(document.createElement("img")).src =
         "/public/images/Celebrate.gif";
     }
@@ -54,15 +53,15 @@ const quiz = () => {
 
   const naestaSpurning = () => {
     if (las === true) {
-      if (index === data.length - 1) {
+      if (index === spurningar.length - 1) {
         setNidurstada(true);
         lokaMynd();
         return 0;
       }
       setIndex(++index);
-      setSpurning(data[index]);
+      setSpurning(spurningar[index]);
       setLas(false);
-      svarArray.map((svarlisti) => {
+      valArray.map((svarlisti) => {
         svarlisti.current.classList.remove("rangtSvar");
         svarlisti.current.classList.remove("rettSvar");
         return null;
@@ -72,7 +71,7 @@ const quiz = () => {
 
   const reynaAftur = () => {
     setIndex(0);
-    setSpurning(data[0]);
+    setSpurning(spurningar[0]);
     setStig(0);
     setLas(false);
     setNidurstada(false);
@@ -92,49 +91,48 @@ const quiz = () => {
           </h2>
           <ul>
             <li
-              ref={svar1}
+              ref={val1}
               onClick={(e) => {
                 tekkaSvar(e, 1);
               }}
             >
-              {spurning.svar1}
+              {spurning.val[0]}
             </li>
             <li
-              ref={svar2}
+              ref={val2}
               onClick={(e) => {
                 tekkaSvar(e, 2);
               }}
             >
-              {spurning.svar2}
+              {spurning.val[1]}
             </li>
             <li
-              ref={svar3}
+              ref={val3}
               onClick={(e) => {
                 tekkaSvar(e, 3);
               }}
             >
-              {spurning.svar3}
+              {spurning.val[2]}
             </li>
             <li
-              ref={svar4}
+              ref={val4}
               onClick={(e) => {
                 tekkaSvar(e, 4);
               }}
             >
-              {spurning.svar4}
+              {spurning.val[3]}
             </li>
           </ul>
-          <button onClick={naestaSpurning}>Next</button>
+          <button onClick={naestaSpurning}>Næsta Spurning</button>
           <div className="index">
-            {index + 1} af {data.length} Spurningum
+            {index + 1} af {spurningar.length} Spurningum
           </div>
         </>
       )}
       {nidurstada ? (
         <>
-          <div></div>
           <h2>
-            Þú náðir {stig} af {data.length} rétt
+            Þú náðir {stig} af {spurningar.length} rétt
           </h2>
           <button onClick={reynaAftur}>Reyna Aftur!</button>
         </>

@@ -105,4 +105,7 @@ img {
   border-left: rgb(8, 255, 8) inset;
   border-top: rgba(7, 241, 97, 0.719) inset;
   border-right: rgb(162, 190, 2) inset;
+  display: flex;
+  width: 400px;
+  height: 400px;
 }
