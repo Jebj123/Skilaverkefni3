@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { createElement, useRef, useState } from "react";
 import "./Quiz.css";
 import { data } from "./Svor";
 import confetti from "https://cdn.skypack.dev/canvas-confetti";
@@ -40,8 +40,7 @@ const quiz = () => {
   const lokaMynd = () => {
     if (stig < 3) {
       document.body.appendChild(document.createElement("img")).src =
-        "/public/images/badDog.jpg";
-      document.body.appendChild(document.createElement("h1"));
+        "/public/images/badDog.gif";
     } else if (stig >= 3) {
       document.body.appendChild(document.createElement("img")).src =
         "/public/images/Celebrate.gif";
@@ -124,7 +123,7 @@ const quiz = () => {
               {spurning.svar4}
             </li>
           </ul>
-          <button onClick={naestaSpurning}>Next</button>
+          <button onClick={naestaSpurning}>Næsta Spurning</button>
           <div className="index">
             {index + 1} af {data.length} Spurningum
           </div>
@@ -132,7 +131,6 @@ const quiz = () => {
       )}
       {nidurstada ? (
         <>
-          <div></div>
           <h2>
             Þú náðir {stig} af {data.length} rétt
           </h2>

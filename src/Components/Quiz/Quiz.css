@@ -105,4 +105,17 @@ img {
   border-left: rgb(8, 255, 8) inset;
   border-top: rgba(7, 241, 97, 0.719) inset;
   border-right: rgb(162, 190, 2) inset;
+  display: flex;
+  width: 400px;
+  height: 400px;
+}
+.prog-1 {
+  width: 640px;
+  height: 20px;
+  background-color: black;
+  border-radius: 10px;
+}
+.prog-2 {
+  height: 20px;
+  background-color: green;
 }
