@@ -73,8 +73,8 @@ const quiz = () => {
     setIndex(0);
     setSpurning(spurningar[0]);
     setStig(0);
-    setLas(false);
     setNidurstada(false);
+    setLas(false);
     reset();
   };
 
